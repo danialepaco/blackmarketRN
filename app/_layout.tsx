@@ -2,7 +2,8 @@ import FontAwesome from "@expo/vector-icons/FontAwesome";
 import { useFonts } from "expo-font";
 import * as SplashScreen from "expo-splash-screen";
 import { useEffect } from "react";
-import { SessionProvider } from "./ctx";
+import { SessionProvider } from "./../hooks/ctx";
+import { Slot } from "expo-router";
 
 export {
   // Catch any errors thrown by the Layout component.
@@ -40,7 +41,6 @@ export default function RootLayout() {
 
   return <RootLayoutNav />;
 }
-import { Slot } from "expo-router";
 
 function RootLayoutNav() {
   return (

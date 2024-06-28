@@ -1,6 +1,6 @@
 import { TextInput, ImageBackground, Image, TouchableOpacity } from "react-native";
 import { Text, View } from "@/components/Themed";
-import { useSession } from "./ctx";
+import { useSession } from "./../hooks/ctx";
 import { router } from "expo-router";
 import { BACKGROUND_IMG, LOGO_ICON } from '../assets/images';
 import styles from "./loginStyles"
