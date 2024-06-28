@@ -1,0 +1,11 @@
+{ 
+    "login": {
+        "emailTitle": "Email",
+        "emailPlaceholder": "Type your email or telephone",
+        "passwordTitle": "Password",
+        "passwordPlaceholder": "Type your password",
+        "forgotTitle": "I forgot my password",
+        "noAccountTitle": "Don’t have an account?",
+        "signUpTitle": "Sign up"
+    }
+}

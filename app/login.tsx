@@ -4,6 +4,7 @@ import { useSession } from "./../hooks/ctx";
 import { router } from "expo-router";
 import { BACKGROUND_IMG, LOGO_ICON } from '../assets/images';
 import styles from "./loginStyles"
+import en from '@/translations/en.json';
 
 export default function Login() {
   const { signIn } = useSession();
@@ -20,14 +21,14 @@ export default function Login() {
           style={styles.logo}
         />
         <View style={styles.inputContainer}>
-          <Text style={styles.email}>Email</Text>
-          <TextInput placeholder="Type your email or telephone" style={styles.input} />
+          <Text style={styles.email}>{en.login.emailTitle}</Text>
+          <TextInput placeholder={en.login.emailPlaceholder} style={styles.input} />
         </View>
 
         <View style={styles.inputContainer}>
-          <Text style={styles.password}>Password</Text>
+          <Text style={styles.password}>{en.login.passwordTitle}</Text>
           <TextInput
-            placeholder="Type your password"
+            placeholder={en.login.passwordPlaceholder}
             secureTextEntry
             style={styles.input}
           />
@@ -38,16 +39,16 @@ export default function Login() {
             </TouchableOpacity>
         </View>
         <TouchableOpacity>
-          <Text style={styles.forgotButton}>I forgot my password</Text>
+          <Text style={styles.forgotButton}>{en.login.forgotTitle}</Text>
         </TouchableOpacity>
       </View>
       <View style={styles.containerRegister}>
        <TouchableOpacity>
-          <Text style={styles.noAccountButton}>Don’t have an account?</Text>
+          <Text style={styles.noAccountButton}>{en.login.noAccountTitle}</Text>
         </TouchableOpacity>
         <View style={styles.registerButtonContainer}>
           <TouchableOpacity style={styles.registerButton}>
-              <Text style={styles.registerButtonTitle}>Sign up</Text>
+              <Text style={styles.registerButtonTitle}>{en.login.signUpTitle}</Text>
             </TouchableOpacity>
         </View>
       </View>
