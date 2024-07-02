@@ -1,7 +1,7 @@
 import { Button, StyleSheet } from "react-native";
 import { Text, View } from "@/components/Themed";
 import { useSession } from "../../../hooks/ctx";
-import styles from "./styles";
+import styles from "../styles";
 
 export default function TabOneScreen() {
   const { signOut, session } = useSession();
