@@ -7,5 +7,12 @@
         "forgotTitle": "I forgot my password",
         "noAccountTitle": "Don’t have an account?",
         "signUpTitle": "Sign up"
+    },
+    "home": {
+        "credit": "Credit",
+        "paypal": "Paypal",
+        "crypto": "Crypto",
+        "paymentMethods": "Payment methods",
+        "seeAll": "See all"
     }
 }
