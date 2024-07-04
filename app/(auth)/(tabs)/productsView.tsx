@@ -1,10 +1,10 @@
 import { StyleSheet } from "react-native";
 import { Text, View } from "@/components/Themed";
 
-export default function TabThreeScreen() {
+export default function ProductsScreen() {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Tab Three</Text>
+      <Text style={styles.title}>Products Tab</Text>
     </View>
   );
 }
