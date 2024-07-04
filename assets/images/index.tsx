@@ -5,3 +5,6 @@ export const DISCOUNT_IMG = () => require('./discount.png');
 export const CARD_ICON = () => require('./card_ico.png');
 export const PAYPAL_ICON = () => require('./paypal_ico.png');
 export const CRYPTO_ICON = () => require('./crypto_ico.png');
+export const CHAIR_IMG = () => require('./chair.png');
+export const FAVORITE_IMG = () => require('./favorite.png');
+export const HEADER_IMG = () => require('./header.png');

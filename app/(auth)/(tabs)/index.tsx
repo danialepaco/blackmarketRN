@@ -3,11 +3,21 @@ import { Text, View } from "@/components/Themed";
 import styles from "../_homeStyles";
 import en from "../../../translations/en.json";
 import { router } from "expo-router";
-import { FEDEX_IMG, DISCOUNT_IMG, CARD_ICON, PAYPAL_ICON, CRYPTO_ICON } from '../../../assets/images';
+import { FEDEX_IMG, DISCOUNT_IMG, CARD_ICON, PAYPAL_ICON, CRYPTO_ICON, HEADER_IMG } from '../../../assets/images';
+import ItemScreen from "@/app/itemView";
 
 export default function HomeScreen() {
   return (
     <ScrollView style={styles.container}>
+      <Image source={HEADER_IMG()} style={styles.header}></Image>
+      <ScrollView style={styles.horizontalScroll} horizontal={true} indicatorStyle="white">
+      <ItemScreen></ItemScreen>
+      <ItemScreen></ItemScreen>
+      <ItemScreen></ItemScreen>
+      <ItemScreen></ItemScreen>
+      <ItemScreen></ItemScreen>
+      <ItemScreen></ItemScreen>
+      </ScrollView>
       <TouchableOpacity 
         onPress={() => {
           router.navigate("productsView")
