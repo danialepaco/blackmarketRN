@@ -5,13 +5,22 @@ import { router } from "expo-router";
 import { BACKGROUND_IMG, LOGO_ICON } from '../assets/images';
 import styles from "./loginStyles"
 import en from '@/translations/en.json';
+import { useState, useEffect } from 'react';
 
 export default function Login() {
-  const { signIn } = useSession();
+  const { signIn, session } = useSession();
   const handleLogin = () => {
-    signIn();
-    router.replace("/");
+    signIn(emailValue, passwordValue);
   };
+  const [emailValue, emailOnChange] = useState(en.login.emailPlaceholder);
+  const [passwordValue, passwordOnChange] = useState(en.login.passwordPlaceholder);
+
+  useEffect(() => {
+    console.log(session)
+    if (session) {
+      router.replace("/");
+    }
+  }, [session]);
 
   return (
     <ImageBackground source={BACKGROUND_IMG()} resizeMode="cover" style={styles.background}>
@@ -22,13 +31,14 @@ export default function Login() {
         />
         <View style={styles.inputContainer}>
           <Text style={styles.email}>{en.login.emailTitle}</Text>
-          <TextInput placeholder={en.login.emailPlaceholder} style={styles.input} />
+          <TextInput onChangeText={emailOnChange} placeholder={emailValue} style={styles.input} />
         </View>
 
         <View style={styles.inputContainer}>
           <Text style={styles.password}>{en.login.passwordTitle}</Text>
           <TextInput
-            placeholder={en.login.passwordPlaceholder}
+            placeholder={passwordValue}
+            onChangeText={passwordOnChange}
             secureTextEntry
             style={styles.input}
           />

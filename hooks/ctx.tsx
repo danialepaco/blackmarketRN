@@ -1,8 +1,9 @@
 import React from "react";
 import { useStorageState } from "../app/useStorageState";
+import axios from "axios";
 
 const AuthContext = React.createContext<{
-  signIn: () => void;
+  signIn: (email: String, password: String) => void;
   signOut: () => void;
   session?: string | null;
   isLoading: boolean;
@@ -30,11 +31,20 @@ export function SessionProvider(props: React.PropsWithChildren) {
   return (
     <AuthContext.Provider
       value={{
-        signIn: () => {
-          // Add your login logic here
-          // For example purposes, we'll just set a fake session in storage
-          //This likely would be a JWT token or other session data
-          setSession("John Doe");
+        signIn: (email, password) => {
+          const data = {
+            user: {
+              email: email,
+              password: password
+            }
+          };
+          axios.post('https://rs-blackmarket-api.herokuapp.com/api/v1/users/sign_in', data)
+          .then(function (response) {
+            setSession(response.headers['authorization']);
+          })
+          .catch(function (error) {
+            console.log(error);
+          });
         },
         signOut: () => {
           setSession(null);
