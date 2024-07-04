@@ -4,6 +4,9 @@ export default StyleSheet.create({
     container: {
         backgroundColor: "#F4F7FA",
     },
+    horizontalScroll: {
+        flexDirection: 'row',
+    },
     title: {
         fontSize: 20,
         fontWeight: "bold",
@@ -57,4 +60,8 @@ export default StyleSheet.create({
         textAlign: "center",
         fontSize: 17
     },
+    header: {
+        height: 60,
+        width: "100%",
+    }
 });
