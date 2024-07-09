@@ -1,7 +1,9 @@
 import { Redirect, Stack } from 'expo-router';
-
 import { useSession } from '../../hooks/ctx';
 import { Text } from '@/components/Themed';
+import interceptor from '@/api/interceptors'
+
+interceptor()
 
 export default function AppLayout() {
   const { session, isLoading } = useSession();
