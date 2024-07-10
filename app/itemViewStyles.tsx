@@ -8,7 +8,8 @@ export default StyleSheet.create({
     margin: 20
   },
   title: {
-    fontWeight: "bold"
+    fontWeight: "bold",
+    width: '70%'
   },
   image: {
     resizeMode: "contain",
